@@ -9,3 +9,4 @@
 | GET | `/api/admin/work-orders` | 报价任务清单 |
 | GET | `/api/shopfloor/dashboard` | 工程师任务工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交报价结果 |
+| POST | `/api/admin/margin-guard` | 报价毛利与审批判断 |

@@ -76,3 +76,7 @@ docker compose up --build
 | ![知华科技微信咨询二维码 1](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询二维码 2](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO：CPQ 源码、报价系统、产品配置、价格管理、Java CPQ、Vue CPQ、知华科技开源项目、上海如静知华信息科技有限公司。
+
+## 报价毛利保护
+
+新增 `POST /api/admin/margin-guard`，自动计算折后单价、报价收入和毛利率，并结合折扣权限与交易风险给出自动批准、提交审批或阻断决策，让销售报价在发出前完成利润底线检查。
