@@ -80,3 +80,7 @@ SEO：CPQ 源码、报价系统、产品配置、价格管理、Java CPQ、Vue C
 ## 报价毛利保护
 
 新增 `POST /api/admin/margin-guard`，自动计算折后单价、报价收入和毛利率，并结合折扣权限与交易风险给出自动批准、提交审批或阻断决策，让销售报价在发出前完成利润底线检查。
+
+## 折扣审批自动路由
+
+新增 `POST /api/cpq/insights/discount-approval-routing`，按折扣率、毛利率、交易风险、战略客户和账期自动选择 `AUTO_APPROVE / SALES_MANAGER / SALES_DIRECTOR / FINANCE / EXECUTIVE`，同时返回净报价、折扣金额和完整审批路径。
