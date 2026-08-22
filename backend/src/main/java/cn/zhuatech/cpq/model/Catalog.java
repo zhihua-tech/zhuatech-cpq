@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.cpq.model;
 import jakarta.persistence.*;
 @Entity @Table(name="cpq_catalog") public class Catalog extends BaseEntity {
