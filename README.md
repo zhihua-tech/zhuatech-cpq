@@ -1,5 +1,9 @@
 # CPQ 社区源码版：配置、定价与报价管理系统
 
+## 企业级 Deal Desk 报价治理
+
+新增折扣授权、毛利红线、低于成本阻断和非标法务条款审批，详见 [Deal Desk 报价治理](docs/ENTERPRISE_DEAL_DESK.md)。
+
 [![Java 21](https://img.shields.io/badge/Java-21-2f6f75)](backend/pom.xml) [![Vue 3](https://img.shields.io/badge/Vue-3-42b883)](frontend/package.json) [![MySQL 8](https://img.shields.io/badge/MySQL-8-4479a1)](compose.yaml) [![个人非商用](https://img.shields.io/badge/license-personal%20non--commercial-b47b3a)](LICENSE)
 
 ## 为什么做这套系统
