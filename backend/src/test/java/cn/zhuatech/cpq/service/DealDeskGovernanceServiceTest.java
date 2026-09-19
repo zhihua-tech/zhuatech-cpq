@@ -2,8 +2,14 @@
 package cn.zhuatech.cpq.service;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class DealDeskGovernanceServiceTest {
     private final DealDeskGovernanceService service = new DealDeskGovernanceService();
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void approvesQuoteWithinDiscountAndMarginGuardrails() {
         var result = service.evaluate(new DealDeskGovernanceService.Request(
                 "Q-001", 1_000_000, 900_000, 600_000, 1_500, false, false));
@@ -11,6 +17,9 @@ class DealDeskGovernanceServiceTest {
         assertEquals(1_000, result.discountBps());
         assertTrue(result.orderConversionAllowed());
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void blocksBelowCostQuoteWithUnapprovedTerms() {
         var result = service.evaluate(new DealDeskGovernanceService.Request(
                 "Q-002", 1_000_000, 500_000, 600_000, 2_000, true, false));

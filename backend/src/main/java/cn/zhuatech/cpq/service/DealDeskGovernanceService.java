@@ -6,8 +6,14 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class DealDeskGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         int discountBps = request.listPriceCents() == 0 ? 0
                 : (int) ((request.listPriceCents() - request.netPriceCents()) * 10_000L / request.listPriceCents());
@@ -24,16 +30,25 @@ public class DealDeskGovernanceService {
         return new Result(request.quoteNo(), decision, discountBps, marginBps,
                 List.copyOf(blockers), List.copyOf(approvals), "APPROVED".equals(decision));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String quoteNo, @Min(1) long listPriceCents,
                           @Min(0) long netPriceCents, @Min(0) long costCents,
                           @Min(0) @Max(10_000) int maxDiscountBps,
                           boolean legalTermsChanged, boolean legalApproved) {
+        /**
+         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+         */
         public Request {
             if (quoteNo == null || quoteNo.isBlank()) throw new IllegalArgumentException("quoteNo is required");
             if (listPriceCents < 1 || netPriceCents < 0 || costCents < 0) throw new IllegalArgumentException("invalid price values");
             if (maxDiscountBps < 0 || maxDiscountBps > 10_000) throw new IllegalArgumentException("maxDiscountBps must be 0..10000");
         }
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String quoteNo, String decision, int discountBps, int marginBps,
                          List<String> blockers, List<String> requiredApprovals, boolean orderConversionAllowed) {}
 }

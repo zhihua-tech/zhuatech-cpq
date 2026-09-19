@@ -13,8 +13,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class DiscountApprovalRoutingService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result route(Request request) {
         BigDecimal discountAmount = request.listAmount().multiply(request.discountRate())
             .setScale(2, RoundingMode.HALF_UP);
@@ -39,12 +45,18 @@ public class DiscountApprovalRoutingService {
             approvalLevel, approvalPath, "AUTO_APPROVE".equals(approvalLevel));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String quoteNo, @DecimalMin("0.01") BigDecimal listAmount,
                           @DecimalMin("0") @DecimalMax("1") BigDecimal discountRate,
                           @DecimalMin("0") @DecimalMax("1") BigDecimal grossMarginRate,
                           @Min(0) @Max(100) int dealRiskScore, boolean strategicCustomer,
                           @Min(0) int paymentTermDays) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String quoteNo, BigDecimal netAmount, BigDecimal discountAmount,
                          String approvalLevel, List<String> approvalPath,
                          boolean automatic) {}

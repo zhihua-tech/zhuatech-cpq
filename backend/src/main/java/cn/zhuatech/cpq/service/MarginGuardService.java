@@ -14,8 +14,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class MarginGuardService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         BigDecimal netUnitPrice = request.listPrice().multiply(BigDecimal.ONE.subtract(
             BigDecimal.valueOf(request.discountPercent()).divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP)));
@@ -33,10 +39,16 @@ public class MarginGuardService {
             marginPercent.setScale(2, RoundingMode.HALF_UP), decision, !"AUTO_APPROVE".equals(decision), reasons);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String quoteNo, @DecimalMin("0") BigDecimal listPrice,
                           @DecimalMin("0") @DecimalMax("100") double discountPercent,
                           @DecimalMin("0") BigDecimal unitCost, @Positive int quantity,
                           @Min(0) @Max(100) int dealRisk) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String quoteNo, BigDecimal netUnitPrice, BigDecimal revenue,
                          BigDecimal marginPercent, String decision,
                          boolean approvalRequired, List<String> reasons) {}

@@ -9,9 +9,15 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class DiscountApprovalRoutingServiceTests {
     private final DiscountApprovalRoutingService service = new DiscountApprovalRoutingService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void routesLargeDiscountToSalesDirector() {
         var result = service.route(new DiscountApprovalRoutingService.Request(
@@ -23,6 +29,9 @@ class DiscountApprovalRoutingServiceTests {
         assertFalse(result.automatic());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void escalatesExtremeDiscountToExecutive() {
         var result = service.route(new DiscountApprovalRoutingService.Request(
