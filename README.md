@@ -1,5 +1,7 @@
 # CPQ 社区源码版：配置、定价与报价管理系统
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## 企业级 Deal Desk 报价治理
 
 新增折扣授权、毛利红线、低于成本阻断和非标法务条款审批，详见 [Deal Desk 报价治理](docs/ENTERPRISE_DEAL_DESK.md)。
