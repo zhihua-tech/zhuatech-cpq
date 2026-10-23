@@ -1,0 +1,64 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "netQuotation": "#1160",
+      "grossProfit": "#440"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "quantity": "100"
+    },
+    "expected": {
+      "secondTierAmount": "#0",
+      "netQuotation": "#1000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "discount": "200"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "netQuotation": "#960"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "discount": "1161"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "discount": "1160"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "marginPct": "N/A"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "quantity": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "unitCost": "0"
+    },
+    "expected": {
+      "marginPct": "#100"
+    },
+    "error": false
+  }
+]
